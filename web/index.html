@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>enlaces · monitor Ethernet</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#links">Saltar a los enlaces</a>
+
+<main class="panel">
+  <header class="masthead">
+    <h1 class="mark">enlaces</h1>
+    <p class="statusline">
+      <span class="mode" id="mode" data-mode="unknown">—</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span id="scan">sin escaneo</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span id="age">—</span>
+    </p>
+  </header>
+
+  <section class="verdict" aria-labelledby="verdict-heading">
+    <h2 class="sr-only" id="verdict-heading">Estado de los enlaces</h2>
+    <p class="sentence" id="sentence">Leyendo el monitor…</p>
+    <p class="breakdown" id="breakdown"></p>
+    <p class="note" id="note" hidden></p>
+    <p class="note note-demo" id="demo-note" hidden>Datos sintéticos: sin red y sin Telegram.</p>
+    <p class="sr-only" id="announcer" role="status" aria-live="polite"></p>
+  </section>
+
+  <ul class="links" id="links" aria-describedby="breakdown"></ul>
+
+  <section class="alerts" aria-labelledby="alerts-heading">
+    <h2 class="micro" id="alerts-heading">último aviso</h2>
+    <p class="alert-text" id="alert-text">—</p>
+  </section>
+
+  <footer class="colophon">
+    <span id="provenance">—</span>
+    <span class="colophon-note">visor: cerrar esta página no detiene el monitoreo</span>
+  </footer>
+</main>
+
+<script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[Unit]
+Description=Ethernet link monitor - local web panel
+Documentation=file://%h/Documentos/work/ethernet-link-monitor/WEB.md
+After=ethernet-monitor.service
+Wants=ethernet-monitor.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Documentos/work/ethernet-link-monitor
+ExecStart=%h/Documentos/work/ethernet-link-monitor/.venv/bin/python %h/Documentos/work/ethernet-link-monitor/web.py --port 8765
+Restart=always
+RestartSec=10
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

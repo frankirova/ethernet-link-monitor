@@ -1,0 +1,4 @@
+nombre,ip,modelo,zona,ifindex,min_mbps,community_env
+Example link,192.0.2.1,AF60,North,2,1000,SNMP_COMMUNITY
+Manual link,192.0.2.2,M5,South,1,100,SNMP_COMMUNITY
+AirOS link,192.0.2.3,Force300,South,6,100,SNMP_COMMUNITY

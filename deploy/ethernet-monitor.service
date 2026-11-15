@@ -1,0 +1,16 @@
+[Unit]
+Description=Ethernet link monitor (SNMP polling and Telegram alerts)
+Documentation=file://%h/Documentos/work/ethernet-link-monitor/README.md
+# Deliberately no network-online ordering: a scan that cannot reach a device is
+# retried next cycle, and waiting for the network would delay the first scan.
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Documentos/work/ethernet-link-monitor
+ExecStart=%h/Documentos/work/ethernet-link-monitor/.venv/bin/python %h/Documentos/work/ethernet-link-monitor/monitor.py --owner --hosts hosts.activos.csv --interval 60
+Restart=always
+RestartSec=15
+TimeoutStopSec=20
+
+[Install]
+WantedBy=default.target
