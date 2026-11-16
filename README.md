@@ -31,6 +31,18 @@ python3 monitor.py --demo --status  # PID and completed scan count
 python3 monitor.py --demo --stop    # explicitly stop the demo monitor
 ```
 
+## Panel web
+
+**[Probá la demo interactiva en el navegador](https://frankirova.github.io/ethernet-link-monitor/)**: simulá la caída de un equipo y mirá el aviso que se enviaría. Datos ficticios, sin backend.
+
+`python3 web.py --demo` abre el panel en el navegador con datos sintéticos (detalles en [WEB.md](WEB.md)). Los enlaces con problemas suben arriba y el resumen dice cuántos están fuera de norma.
+
+<img src="docs/img/panel-ok.png" width="520" alt="Panel web con los seis enlaces en norma">
+
+Cuando un enlace cambia de estado, el monitor espera dos escaneos seguidos antes de avisar por Telegram, para no alertar por una falla de un solo instante. Así se ve una caída de puerto ya confirmada, con el aviso que se enviaría:
+
+<img src="docs/img/panel-caida.png" width="520" alt="Panel web con un enlace caído y el aviso de Telegram">
+
 ## Preparar el monitoreo real
 
 ### 1. Instalá las dependencias
